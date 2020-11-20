@@ -17,6 +17,7 @@ programa
 	{
 		inteiro opcao=0, cont=0, n5, n6, troca=0, resto=0
 		real base, altura, area, largura, comprimento, n1, n2, n3, n4, media=0.0
+		cadeia ENTER = ""
 
 		enquanto(opcao !=99)
 		{			
@@ -48,6 +49,8 @@ programa
 					leia(altura)
 					area = (base*altura)/2
 					escreva("O valor da área do triângulo é: ",area,"\n")
+					escreva("\nPressione <ENTER> para continuar...")
+					leia(ENTER)
 				}
 				senao
 				{
@@ -58,54 +61,60 @@ programa
 						escreva("Informe o comprimento do terreno: ")
 						leia(comprimento)
 						area = largura*comprimento
-						escreva("O consumo de energia deste terreno é: ",area*9," watts \n")					
+						escreva("O consumo de energia deste terreno é: ",area*9," watts \n")
+						escreva("\nPressione <ENTER> para continuar...")
+						leia(ENTER)					
 					}
 				}
 				senao
 				{
 					se(opcao==3)
 					{
-					escreva("Informe a nota do primeiro bimestre: ")
-					leia(n1)
-					escreva("Informe a nota do segundo bimestre: ")
-					leia(n2)
-					escreva("Informe a nota do terceiro bimestre: ")
-					leia(n3)
-					escreva("Informe a nota do quarto bimestre: ")
-					leia(n4)
-					media = (n1+n2+n3+n4)/4
-						se(media>=6.5)
-						{
-							escreva("O aluno foi aprovado")
-						}
-						senao
-						{
-							escreva("O aluno foi reprovado")
-						}
-						
-					}
-				}
-				senao
-				{
-					se(opcao==4)
-					{
-					escreva("Informe o primeiro número do intervalo: ")
-					leia(n5)
-					escreva("Informe o segundo número do intervalo: ")
-					leia(n6)	
-						se(n5>n6)
-						{
-							troca = n5
-							n5 = n6
-							n6 = troca
-							cont = n5
-						}
+						escreva("Informe a nota do primeiro bimestre: ")
+						leia(n1)
+						escreva("Informe a nota do segundo bimestre: ")
+						leia(n2)
+						escreva("Informe a nota do terceiro bimestre: ")
+						leia(n3)
+						escreva("Informe a nota do quarto bimestre: ")
+						leia(n4)
+						media = (n1+n2+n3+n4)/4
+							se(media>=6.5)
+							{
+								escreva("O aluno foi aprovado")
+								escreva("\nPressione <ENTER> para continuar...")
+								leia(ENTER)
+							}
 							senao
-								{
-									n5 = n5
-									n6 = n6
-									cont = n5
-								}
+							{
+								escreva("O aluno foi reprovado")
+								escreva("\nPressione <ENTER> para continuar...")
+								leia(ENTER)
+							}
+							
+					}
+				
+					senao
+					{
+						se(opcao==4)
+						{
+							escreva("Informe o primeiro número do intervalo: ")
+							leia(n5)
+							escreva("Informe o segundo número do intervalo: ")
+							leia(n6)	
+							se(n5>n6)
+							{
+								troca = n5
+								n5 = n6
+								n6 = troca
+								cont = n5
+							}
+							senao
+							{
+								n5 = n5
+								n6 = n6
+								cont = n5
+							}
 							enquanto (cont <= n6)
 							{
 								resto = cont - (cont/2*2)
@@ -115,40 +124,45 @@ programa
 								}
 								cont = cont + 1
 							}
-					}
-				}							
-				senao
-				{
-					se(opcao==5)
+						
+						escreva("\nPressione <ENTER> para continuar...")
+						leia(ENTER)
+						}						
+					senao
 					{
-						escreva("Informe o primeiro número do intervalo: ")
-						leia(n5)
-						escreva("Informe o segundo número do intervalo: ")
-						leia(n6)	
-						n5 = n5 + 5
-						n6 = n6 + 5	
-						se(n5>n6)
+						se(opcao==5)
 						{
-							troca = n5
-							n5 = n6
-							n6 = troca
-							cont = n5
-						}
+							escreva("Informe o primeiro número do intervalo: ")
+							leia(n5)
+							escreva("Informe o segundo número do intervalo: ")
+							leia(n6)	
+							n5 = n5 + 5
+							n6 = n6 + 5	
+							se(n5>n6)
+							{
+								troca = n5
+								n5 = n6
+								n6 = troca
+								cont = n5
+							}
 							senao
 							{
 								n5 = n5
 								n6 = n6									
 								cont = n5
 							}
-								enquanto (cont <= n6)
+							enquanto (cont <= n6)
+							{
+								resto = cont - (cont/2*2)
+								se (resto !=0)
 								{
-									resto = cont - (cont/2*2)
-									se (resto !=0)
-									{
-										escreva(cont, " ")
-									}
-									cont = cont + 1
+									escreva(cont, " ")
 								}
+								cont = cont + 1
+							}
+						escreva("\nPressione <ENTER> para continuar...")
+						leia(ENTER)
+						}
 					}
 				}
 			}
@@ -163,7 +177,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3113; 
+ * @POSICAO-CURSOR = 2124; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
